@@ -1,0 +1,76 @@
+﻿@model Projeto_MVC.Models.Produtos
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Cadastro de produtos</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dados do produto</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Código)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Código)
+            @Html.ValidationMessageFor(model => model.Código)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descrição)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descrição)
+            @Html.ValidationMessageFor(model => model.Descrição)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Peso)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Peso)
+            @Html.ValidationMessageFor(model => model.Peso)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categoria)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Categoria)
+            @Html.ValidationMessageFor(model => model.Categoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Valor_Unitário)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Valor_Unitário)
+            @Html.ValidationMessageFor(model => model.Valor_Unitário)
+        </div>
+
+        <p><input type="submit" value="Cadastrar" /></p>
+
+    </fieldset>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+
+}

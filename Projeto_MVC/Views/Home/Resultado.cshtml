@@ -1,0 +1,60 @@
+﻿@model Projeto_MVC.Models.Produtos
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Listar dados do Produto</h2>
+<fieldset>
+    <legend>Dados do Produto</legend>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Código)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Código)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Descrição)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Descrição)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Peso)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Peso)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Categoria)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Categoria)
+    </div>
+
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Valor_Unitário)
+    </div>
+
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Valor_Unitário)
+    </div>
+
+    <p>@Html.ActionLink("Voltar", "Index")</p>
+</fieldset>
