@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Projeto_MVC.Models;
 
 namespace Projeto_MVC.Controllers
 {
@@ -10,9 +12,23 @@ namespace Projeto_MVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var produtos = new Produtos();
+            return View(produtos);
+        }
+        [HttpPost]
+        public ActionResult Index(Produtos produtos)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Resultado", produtos);
+            }
+            return View(produtos);
         }
 
+        public ActionResult Resultado(Produtos produtos)
+        {
+            return View(produtos);
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
